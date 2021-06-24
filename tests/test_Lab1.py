@@ -34,7 +34,7 @@ def test_exercise_4():
     assert answers['exercise_4'].equals(helper.exercise_4(titance_df))
     
 def test_exercise_5():
-    titanic_df_copy = titanic_df.set_index('Name')
+    titanic_df_copy = titanic_df.set_index('nsame')
     helper.exercise_5(titanic_df_copy)
     assert answers['exercise_5'].equals(titanic_df_copy)
     
