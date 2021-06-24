@@ -28,13 +28,13 @@ def test_exercise_2():
     assert answers['exercise_2'].equals(helper.exercise_2())
 
 def test_exercise_3():
-    assert answers['exercise_3'].equals(helper.exercise_3(titance_df))
+    assert answers['exercise_3'].equals(helper.exercise_3(titanic_df))
 
 def test_exercise_4():
-    assert answers['exercise_4'].equals(helper.exercise_4(titance_df))
+    assert answers['exercise_4'].equals(helper.exercise_4(titanic_df))
     
 def test_exercise_5():
-    titanic_df_copy = titanic_df.set_index('nsame')
+    titanic_df_copy = titanic_df.set_index('name')
     helper.exercise_5(titanic_df_copy)
     assert answers['exercise_5'].equals(titanic_df_copy)
     
