@@ -1,8 +1,6 @@
 import numpy as np
 import pandas as pd
 
-from sklearn.linear_model import LinearRegression
-
 def exercise_1():
     a = None
     # YOUR SOLUTION HERE
@@ -27,7 +25,8 @@ def exercise_5(titanic_df):
     # YOUR SOLUTION HERE
     return
 
-def exercise_11(X,y):
+def exercise_6(credit):
     # YOUR SOLUTION HERE
-    model = None
-    return model
+    X = None
+    y = None
+    return X,y

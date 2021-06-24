@@ -102,7 +102,7 @@ titanic_df.index # default index
 #### Stop and think: How would you set the index of the data frame to the Sex column and then select only those passengers who are female?
 
 ```python
-df = titanic_df.set_index('Sex').loc['female']
+df = titanic_df.set_index('gender').loc['female']
 df
 ```
 
@@ -151,21 +151,33 @@ credit = pd.read_csv(f"{home}/data-301-student/data/credit.csv",index_col=0)
 credit.head()
 ```
 
-#### Exercise 11. Construct a linear model model.
+#### Construct a linear model model.
 
-Your model should predict LoanAmountApproved using all of the columns except ``Gender`` which after an ethical review was deemed inappropriate to consider when make a determination on the amount of loan approved for an applicant.
+Our model should predict LoanAmountApproved using all of the columns except ``Gender`` which after an ethical review was deemed inappropriate to consider when make a determination on the amount of loan approved for an applicant.
 
-Use ``sklearn.linear_model.LinearRegression`` with the default constructor arguments. You'll need to call ``.fit``. The documentation for this is so easy to get I almost hesitate to put a link in here, but here you go :)
+Use ``sklearn.linear_model.LinearRegression`` with the default constructor arguments. We will need to call ``.fit``. The documentation for this is available at:
 
 https://scikit-learn.org/stable/modules/linear_model.html#ordinary-least-squares
 
+#### Exercise 6.
+
+Your exercise is to create a new dataframe called ``X`` that does not have ``Gender`` or ``LoanAmountApproved``. You must also create a series object called ``y``. The order of the columns in ``X`` must be the same as mine.
+
 ```python
-X = credit.drop(['Gender','LoanAmountApproved'],axis=1)
-y = credit['LoanAmountApproved']
+X,y = Lab1_helper.exercise_6(credit)
 
-model = Lab1_helper.exercise_11(X,y)
+X
+```
 
-# Here is code that takes the numpy array of coefficients stored in model.coef_ and formats it nicely for the screen
+```python
+y
+```
+
+```python
+# Now we can create our model
+from sklearn.linear_model import LinearRegression
+model = LinearRegression().fit(X,y)
+
 coef = pd.Series(model.coef_,index=X.columns)
 coef.abs().sort_values(ascending=False) # this takes the absolute value and then sorts the values in descending order
 ```
@@ -180,35 +192,42 @@ mean_absolute_error(y,model.predict(X))
 The company asks you for your interpretation of the model. You say that being married is a high indicator of receiving a high amount for a loan. This surprises some of your colleagues, but they think this is reasonable to them. Everyone seems happy with the work. However, an experienced data scientist on your team suggests you run a correlation of the columns used in the regression against the column ``Gender`` since it is considered a protected column. You do so quickly to satisfy this request and get:
 
 ```python
+# I know this code is beyond the Chapter at this point, so ignore the details.
 Xgender = X.copy()
 Xgender['Gender'] = credit['Gender']
 Xgender.corr().loc['Gender'].abs().sort_values(ascending=False).drop('Gender')
 ```
 
-**The problems labeled "Problem X" will not be autograded.** They will be factored into your participation score at the end of the quarter. In other words, complete them :)
+**The problems labeled "Problem X" will not be autograded.** You must still complete them.
 
 
 #### Problem 1: 
 
-What do you think about the results? Specifically, is the fact that Married is correlated with Gender at a correlation of 0.36 concerning from an ethical standpoint? What do you as an individual think? Can you think of any suggestions about what to do? What ethical framework did you use in your decision making process: Utilitarianism, Deontology, or Virtue-ethics.
+What do you think about the results? Specifically, is the fact that Married is correlated with Gender at a correlation of 0.36 concerning from an ethical standpoint? What do you as an individual think? Can you think of any suggestions about what to do? Answers these questions using the ethical frameworks we discussed in the ethics video/slides Utilitarianism, Deontology, or Virtue-ethics. In other words, answer these questions as you explain your answers:
+
+Evaluate the alternate options using the following questions:
+* Which option will produce the most good and do the least harm?
+* Which option best enables me to fulfill my duties to all who have a stake? 
+* Which option leads me to act as the sort of person I want to be?
+
+**Your answer here**
 
 
-Let's assume your suggestion was to remove it. Do so and then compare the accuracy of the model
+Let's assume your suggestion was to remove it. Let's do so and then compare the accuracy of the model
 
 ```python
 from sklearn.linear_model import LinearRegression
 
-# YOUR SOLUTION HERE
-# X2 = # make this a dataframe without the married column
-# model2 = # make this your linear model
+X2 = X.drop('Married',axis=1)
+model2 = LinearRegression().fit(X2, y)
 mean_absolute_error(y,model2.predict(X2))
 ```
 
 #### Problem 2:
 
-What do you think now, should you drop it? Your prediction is now off by more than $10,000. Is this ok?
+What do you think now that you know how a decision changes the mean absolute error, should you drop it? Your prediction is now off by more than $10,000. Is this ok? Again, use the frameworks outlined above and in the ethics slides.
 
-#### YOUR SOLUTION HERE
+**YOUR SOLUTION HERE**
 
 ```python
 # Good job!
