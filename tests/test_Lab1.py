@@ -37,7 +37,7 @@ def test_exercise_3():
     #assert answers['exercise_3'].equals(helper.exercise_3(titanic_df))
 
 def test_exercise_4():
-    assert_series_equal(answers['exercise_4'], helper.exercise_4(titanic_df), check_names=False)
+    assert_frame_equal(answers['exercise_4'], helper.exercise_4(titanic_df), check_names=False)
     #assert answers['exercise_4'].equals(helper.exercise_4(titanic_df))
     
 def test_exercise_5():
