@@ -21,8 +21,11 @@ titanic_df = pd.read_csv("https://dlsun.github.io/pods/data/titanic.csv")
 
 credit = pd.read_csv(f"{DIR}/../data/credit.csv",index_col=0)
 
+from pandas.testing import assert_frame_equal
+
 def test_exercise_1():
-    assert answers['exercise_1'].equals(helper.exercise_1())
+    assert_frame_equal(answers['exercise_1'], helper.exercise_1(), check_names=False)
+    #assert answers['exercise_1'].equals(helper.exercise_1())
 
 def test_exercise_2():
     assert answers['exercise_2'].equals(helper.exercise_2())
