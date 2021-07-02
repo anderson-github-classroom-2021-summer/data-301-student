@@ -1,25 +1,23 @@
 import numpy as np
 import pandas as pd
 
-def exercise_1():
-    a = None
+def exercise_1(column,l=0.2):
+    new_c = None
     # YOUR SOLUTION HERE
-    return a
+    return new_c
 
-def exercise_2():
-    b = None
+def exercise_2(df,column,percentiles=[0.25,0.5,0.75]):
     # YOUR SOLUTION HERE
-    return b
 
-def exercise_3(titanic_df):
-    sel = None
+def exercise_3(col1,col2):
+    jd = None
     # YOUR SOLUTION HERE
-    return sel
+    return jd
 
-def exercise_4(titanic_df):
-    sel = None
+def exercise_4(jd):
+    cond = None
     # YOUR SOLUTION HERE
-    return sel
+    return cond
 
 def exercise_5(titanic_df):
     # YOUR SOLUTION HERE
