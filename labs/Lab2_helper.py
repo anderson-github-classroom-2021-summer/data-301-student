@@ -18,13 +18,3 @@ def exercise_4(jd):
     cond = None
     # YOUR SOLUTION HERE
     return cond
-
-def exercise_5(titanic_df):
-    # YOUR SOLUTION HERE
-    return
-
-def exercise_6(credit):
-    # YOUR SOLUTION HERE
-    X = None
-    y = None
-    return X,y
