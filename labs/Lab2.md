@@ -122,6 +122,8 @@ rating_given_num_reviews_0p5.loc[False,True] # P(review_scores_rating>0.5|number
 **Problem 5:** Discuss the interpretation and analysis of ``P(review_scores_rating<=0.5|number_of_reviews<=0.5)`` in the context of the **selection bias** seen in the correlation of higher ratings with more reviews. What does this suggest about the customers and whether this will affect where they are inclined to stay.
 
 
+**Your solution here**
+
 ```python
 # Good job!
 # Don't forget to push with ./submit.sh
