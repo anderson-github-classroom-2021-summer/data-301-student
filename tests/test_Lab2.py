@@ -44,3 +44,5 @@ def test_exercise_4():
     jd_num_reviews_rating_0p5 = Lab2_helper.exercise_3(df_airbnb['number_of_reviews<=0.5'],df_airbnb['review_scores_rating<=0.5'])
     assert_frame_equal(answers['exercise_4'], Lab2_helper.exercise_4(jd_num_reviews_rating_0p5), check_names=False)
     #assert answers['exercise_4'].equals(helper.exercise_4(titanic_df))
+
+
