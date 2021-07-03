@@ -44,16 +44,3 @@ def test_exercise_4():
     jd_num_reviews_rating_0p5 = Lab2_helper.exercise_3(df_airbnb['number_of_reviews<=0.5'],df_airbnb['review_scores_rating<=0.5'])
     assert_frame_equal(answers['exercise_4'], Lab2_helper.exercise_4(jd_num_reviews_rating_0p5), check_names=False)
     #assert answers['exercise_4'].equals(helper.exercise_4(titanic_df))
-
-def test_exercise_5():
-    titanic_df_copy = titanic_df.set_index('name')
-    helper.exercise_5(titanic_df_copy)
-    assert_frame_equal(answers['exercise_5'], titanic_df_copy, check_names=False)
-    #assert answers['exercise_5'].equals(titanic_df_copy)
-
-def test_exercise_6():
-    X,y = answers['exercise_6']
-    Xs,ys = helper.exercise_6(credit)
-    assert_frame_equal(X, Xs, check_names=False)
-    assert_series_equal(y, ys, check_names=False)
-    #assert X.equals(Xs) and y.equals(ys)
