@@ -65,7 +65,7 @@ df_airbnb['number_of_reviews_transformed'].plot.hist()
 ```
 
 ```python
-df_airbnb[['number_of_reviews','number_of_reviews_transformed']]
+df_airbnb[['number_of_reviews','number_of_reviews_transformed']].head()
 ```
 
 **Problem 2:** Write the code to find the 25th, 50th, and 75th percentile of ``number_of_reviews`` using the quantile function. We will use these later.
@@ -84,6 +84,7 @@ df_airbnb[['number_of_reviews<=0.25','number_of_reviews<=0.5','number_of_reviews
 **Problem 3:** Now apply this same transformation but substitute the ``review_scores_rating`` column into your exercise_2 function.
 
 ```python
+# Your solution here
 df_airbnb[['review_scores_rating<=0.25','review_scores_rating<=0.5','review_scores_rating<=0.75']].head()
 ```
 
