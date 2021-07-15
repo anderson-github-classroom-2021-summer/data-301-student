@@ -51,7 +51,7 @@ Here is a nice way to view the columns in alpabetical order:
 pd.Series(df_airbnb.columns).sort_values()
 ```
 
-**Problem 1:** Visualize the distribution of ``number_of_reviews`` using a histogram with 20 bins.
+**Problem 1:** Visualize the distribution of ``number_of_reviews`` using a histogram with 50 bins.
 
 ```python
 # Your solution here
