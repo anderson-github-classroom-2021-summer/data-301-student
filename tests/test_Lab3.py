@@ -17,6 +17,7 @@ answers = joblib.load(str(DIR)+"/answers_Lab3.joblib")
 import Lab3_helper
 
 import pandas as pd
+import numpy as np
 
 df_airbnb = pd.read_csv(f"{DIR}/../data/airbnb.csv", engine='python')
 df_airbnb = df_airbnb[df_airbnb['review_scores_rating']>85].copy()
