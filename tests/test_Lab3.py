@@ -130,13 +130,19 @@ def test_exercise_8():
                                'cleaning_fee', 'guests_included', 'extra_people', 'minimum_nights', 
                                'maximum_nights', 'number_of_reviews',  'reviews_per_month']
     ct = Lab3_helper.exercise_5(one_hot_columns,multi_label_columns,standard_scaler_columns)
-
+    index_values = df_airbnb[standard_scaler_columns].dropna().index
+    X = df_airbnb.loc[index_values].drop('review_scores_rating',axis=1)
+    y = df_airbnb.loc[index_values]['review_scores_rating'] # What we are trying to predict
     pipeline = Lab3_helper.exercise_7(ct,X,y)
 
     best_params = Lab3_helper.exercise_8(pipeline,X,y)
     assert answers['exercise_8'] == best_params
     
 def test_exercise_9():
+    standard_scaler_columns = ['years_host', 'host_response_rate','accommodates', 'bathrooms', 'bedrooms', 
+                           'beds', 'price', 'weekly_price', 'monthly_price', 'security_deposit', 
+                           'cleaning_fee', 'guests_included', 'extra_people', 'minimum_nights', 
+                           'maximum_nights', 'number_of_reviews',  'reviews_per_month']
     # Remove samples that could cause a problem because of missing values
     index_values = df_airbnb[standard_scaler_columns].dropna().index
     X = df_airbnb.loc[index_values].drop('review_scores_rating',axis=1)

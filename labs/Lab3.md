@@ -353,6 +353,9 @@ standard_scaler_columns = ['years_host', 'host_response_rate','accommodates', 'b
                            'maximum_nights', 'number_of_reviews',  'reviews_per_month']
 ct = Lab3_helper.exercise_5(one_hot_columns,multi_label_columns,standard_scaler_columns)
 
+index_values = df_airbnb[standard_scaler_columns].dropna().index
+X = df_airbnb.loc[index_values].drop('review_scores_rating',axis=1)
+y = df_airbnb.loc[index_values]['review_scores_rating'] # What we are trying to predict
 pipeline = Lab3_helper.exercise_7(ct,X,y)
 
 best_params = Lab3_helper.exercise_8(pipeline,X,y)
