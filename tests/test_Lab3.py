@@ -58,7 +58,7 @@ def test_exercise_3():
     scaler = Lab3_helper.StandardScalerImproved()
     scaler.fit(df_airbnb[standard_scaler_columns])
     encoded = pd.DataFrame(scaler.transform(df_airbnb[standard_scaler_columns]),columns=scaler.get_feature_names())
-    assert_frame_equal(answers['exercise_3'], encoded, check_names=False)    
+    assert_frame_equal(pd.DataFrame(answers['exercise_3']), pd.DataFrame(encoded), check_names=False)    
 
 def test_exercise_4():
     multi_label_columns = ['amenities_processed']
