@@ -29,6 +29,7 @@ class MultiHotEncoder(BaseEstimator, TransformerMixin):
 
     def fit(self, X:pd.DataFrame, y=None):
         # Your solution here
+        pass
 
     def transform(self, X:pd.DataFrame):
         if self.n_columns == 0:
@@ -74,6 +75,7 @@ class MultiHotEncoderImproved(BaseEstimator, TransformerMixin):
 
     def fit(self, X:pd.DataFrame, y=None):
         # Your solution here
+        pass
 
     def transform(self, X:pd.DataFrame):
         if self.n_columns == 0:
