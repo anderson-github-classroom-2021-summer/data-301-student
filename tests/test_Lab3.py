@@ -152,5 +152,4 @@ def test_exercise_9():
     e = 0.0001
     assert np.abs(r2_knn - answers['exercise_9'][0]) <= e
     assert np.abs(r2_linear - answers['exercise_9'][1]) <= e
-    
-    
+
