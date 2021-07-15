@@ -21,6 +21,7 @@ import pandas as pd
 df_airbnb = pd.read_csv(f"{DIR}/../data/airbnb.csv", engine='python')
 df_airbnb = df_airbnb[df_airbnb['review_scores_rating']>85].copy()
 df_airbnb['review_scores_rating'] = df_airbnb['review_scores_rating'] - df_airbnb['review_scores_rating'].mean()
+df_airbnb['amenities_processed'] = df_airbnb['amenities'].apply(lambda e: set([v.replace('"',"").replace("{","").replace("}","").strip() for v in e.split(",")]).difference(set([''])))
 
 from pandas.testing import assert_frame_equal
 from pandas.testing import assert_series_equal
