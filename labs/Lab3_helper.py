@@ -95,7 +95,7 @@ def exercise_5(one_hot_columns,multi_label_columns,standard_scaler_columns):
         #(??, standard_scaler_columns),
         #(??, one_hot_columns),
         #(??, multi_label_columns),
-        # Make sure to include handle_unknown='ignore',drop='if_binary' in OneHotEncoder
+        # Make sure to include handle_unknown='ignore' in OneHotEncoder
     )
     
     return ct
@@ -145,6 +145,6 @@ def exercise_9(X,y):
     # Your code here
     # Try n_neighbors from 1 to 50
     # Use scoring r2
-    # Set the cross-validation folds to 10
+    # Set the outermost cross-validation folds to 10 and the inner most folds to 5
     
     return r2_knn,r2_linear

@@ -109,6 +109,10 @@ The individual entries are strings, but we want to convert this to a set for pro
 df_airbnb['amenities'].loc[0]
 ```
 
+```python
+df_airbnb['amenities'].loc[1]
+```
+
 The code below is beyond the scope of what we can do from scratch yet, but it deals with this nested array that is embedded inside a string. Don't worry. We'll have you writing this type of thing by the end of the class.
 
 ```python
