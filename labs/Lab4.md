@@ -32,7 +32,7 @@ Please see the README for instructions on how to submit and obtain the lab.
 
 
 # Put all your solutions into Lab1_helper.py as this script which is autograded
-import Lab3_helper 
+import Lab4_helper 
 
 from pathlib import Path
 home = str(Path.home()) # all other paths are relative to this path. 
@@ -42,8 +42,13 @@ home = str(Path.home()) # all other paths are relative to this path.
 
 ```python
 import pandas as pd
-df_airbnb = pd.read_csv(f'{home}/data-301-student/data/airbnb.csv')
-df_airbnb.head()
+import glob
+dfs = {}
+for file in glob.glob(f'{home}/data-301-student/data/pesticide/*.csv'):
+    name = file.split("/")[-1].replace(".csv","")
+    dfs[name] = pd.read_csv(file)
+    print(name)
+    display(dfs[name].head())
 ```
 
 Here is a nice way to view the columns in alpabetical order:
