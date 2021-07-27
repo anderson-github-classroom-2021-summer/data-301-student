@@ -40,6 +40,24 @@ home = str(Path.home()) # all other paths are relative to this path.
 # change home to where you are storing everything. Again. Not recommended.
 ```
 
+## Data
+There are a lot of different data files associated with this pesticide data:
+
+>This dataset contains information on pesticide residues in food. The U.S. Department of Agriculture (USDA) Agricultural Marketing Service (AMS) conducts the Pesticide Data Program (PDP) every year to help assure consumers that the food they feed themselves and their families is safe. Ultimately, if EPA determines a pesticide is not safe for human consumption, it is removed from the market.
+
+>The PDP tests a wide variety of domestic and imported foods, with a strong focus on foods
+that are consumed by infants and children. EPA relies on PDP data to conduct dietary risk
+assessments and to ensure that any pesticide residues in foods remain at safe levels. USDA
+uses the data to better understand the relationship of pesticide residues to agricultural practices
+and to enhance USDA’s Integrated Pest Management objectives. USDA also works with U.S.
+growers to improve agricultural practices.
+
+> While the original 2013 MS Access database can be found here, the data has been transferred to a SQLite database for easier, more open use. The database contains two tables, Sample Data and Results Data. Each sampling includes attributes such as extraction method, the laboratory responsible for the test, and EPA tolerances among others. These attributes are labeled with codes, which can be referenced in PDF format here, or integrated into the database using the included csv files.
+
+Source: https://www.kaggle.com/usdeptofag/pesticide-data-program-2013
+
+We will first examine the 
+
 ```python
 import pandas as pd
 import glob
