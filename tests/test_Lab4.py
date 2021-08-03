@@ -48,4 +48,5 @@ def test_exercise_3():
     
 def test_exercise_4():
     df = Lab4_helper.exercise_4(data['sampledata13'],data['resultsdata13'],dfs['pest_codes'],dfs['commodity_codes'])
-    assert_frame_equal(answers['exercise_4'], df, check_names=False)
+    #assert_frame_equal(answers['exercise_4'], df, check_names=False)
+    assert_frame_equal(answers['exercise_4'].reset_index(drop=True), df.reset_index(drop=True), check_names=False)
