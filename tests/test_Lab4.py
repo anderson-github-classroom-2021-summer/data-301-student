@@ -36,16 +36,14 @@ from pandas.testing import assert_series_equal
 
 def test_exercise_1():
     df = Lab4_helper.exercise_1(data['resultsdata13'],dfs['pest_codes'])
-    assert_frame_equal(answers['exercise_1'], df, check_names=False)
-
+    assert_frame_equal(answers['exercise_1'].reset_index(drop=True), df.reset_index(drop=True), check_names=False)
+    
 def test_exercise_2():
     df = Lab4_helper.exercise_2(data['sampledata13'],data['resultsdata13'],dfs['pest_codes'])
-    assert_frame_equal(answers['exercise_2'], df, check_names=False)
-    
+    assert_frame_equal(answers['exercise_2'].reset_index(drop=True), df.reset_index(drop=True), check_names=False)    
 def test_exercise_3():
     df = Lab4_helper.exercise_3(data['sampledata13'],data['resultsdata13'],dfs['pest_codes'],dfs['commodity_codes'])
-    assert_frame_equal(answers['exercise_3'], df, check_names=False)
-    
+    assert_frame_equal(answers['exercise_3'].reset_index(drop=True), df.reset_index(drop=True), check_names=False)    
 def test_exercise_4():
     df = Lab4_helper.exercise_4(data['sampledata13'],data['resultsdata13'],dfs['pest_codes'],dfs['commodity_codes'])
     #assert_frame_equal(answers['exercise_4'], df, check_names=False)
