@@ -65,7 +65,7 @@ def test_exercise_5():
     df_scaled = Lab5_helper.exercise_3(df)    
     df_top_pest = Lab4_helper.exercise_2(data2['sampledata13'],data2['resultsdata13'],dfs['pest_codes'])
     top_names = df_top_pest['Pesticide Name'].value_counts().index
-    df_concentrations = Lab5_helper.exercise_5(top_names,data['sampledata13'],data['resultsdata13'],dfs['pest_codes'])
+    df_concentrations = Lab5_helper.exercise_5(top_names,data2['sampledata13'],data2['resultsdata13'],dfs['pest_codes'])
 
     #assert_frame_equal(answers['exercise_4'], df, check_names=False)
     assert_frame_equal(answers['exercise_5'].reset_index(drop=True), df_concentrations.reset_index(drop=True), check_names=False)
