@@ -32,10 +32,10 @@ for file in glob.glob(f'{DIR}/../data/pesticide/*.csv'):
     name = file.split("/")[-1].replace(".csv","")
     dfs[name] = pd.read_csv(file)
 
-data = {}
+data2 = {}
 for file in glob.glob(f'{DIR}/../data/pesticide/*.csv.gz'):
     name = file.split("/")[-1].replace(".csv.gz","")
-    data[name] = pd.read_csv(file)
+    data2[name] = pd.read_csv(file)
 
 from pandas.testing import assert_frame_equal
 from pandas.testing import assert_series_equal
@@ -73,7 +73,7 @@ def test_exercise_5():
 def test_exercise_6():
     df = Lab5_helper.exercise_2(data)
     df_scaled = Lab5_helper.exercise_3(df)    
-    df_top_pest = Lab4_helper.exercise_2(data['sampledata13'],data['resultsdata13'],dfs['pest_codes'])
+    df_top_pest = Lab4_helper.exercise_2(data2['sampledata13'],data2['resultsdata13'],dfs['pest_codes'])
     top_names = df_top_pest['Pesticide Name'].value_counts().index
     df_concentrations = Lab5_helper.exercise_5(top_names,data['sampledata13'],data['resultsdata13'],dfs['pest_codes'])
     us_state_abbrev = {
