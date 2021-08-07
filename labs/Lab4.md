@@ -82,6 +82,10 @@ for file in glob.glob(f'{home}/data-301-student/data/pesticide/*.csv.gz'):
     display(data[name].head())
 ```
 
+```python
+data['resultsdata13'].sort_values(by='concen',ascending=False)
+```
+
 ## What are the most common types of pesticides tested in this study?
 
 
