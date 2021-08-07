@@ -43,7 +43,7 @@ from pandas.testing import assert_series_equal
 def test_exercise_1():
     df = Lab5_helper.exercise_1(data)
     assert_frame_equal(answers['exercise_1'].reset_index(drop=True), df.reset_index(drop=True), check_names=False)
-"""
+
 def test_exercise_2():
     df = Lab5_helper.exercise_2(data)
     assert_frame_equal(answers['exercise_2'].reset_index(drop=True), df.reset_index(drop=True), check_names=False)    
@@ -93,5 +93,3 @@ def test_exercise_6():
     df_train_scaled = Lab5_helper.exercise_3(df_train)
     r2_knn,r2_linear = Lab5_helper.exercise_6(df_train_scaled)
     assert abs(r2_knn - answers['exercise_6'][0]) < 0.0001 and abs(r2_linear - answers['exercise_6'][1]) < 0.0001
-
-"""
