@@ -74,7 +74,7 @@ def test_exercise_6():
     df = Lab5_helper.exercise_2(data)
     df_scaled = Lab5_helper.exercise_3(df)    
     df_top_pest = Lab4_helper.exercise_2(data2['sampledata13'],data2['resultsdata13'],dfs['pest_codes'])
-    top_names = df_top_pest['Pesticide Name'].value_counts().index
+    top_names = sorted(df_top_pest['Pesticide Name'].value_counts().index)
     df_concentrations = Lab5_helper.exercise_5(top_names,data2['sampledata13'],data2['resultsdata13'],dfs['pest_codes'])
     us_state_abbrev = {
     'Alabama': 'AL', 'Alaska': 'AK', 'Arizona': 'AZ', 'Arkansas': 'AR', 'California': 'CA', 'Colorado': 'CO',
