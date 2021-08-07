@@ -128,7 +128,7 @@ df_top_pest
 ```
 
 ```python
-top_names = df_top_pest['Pesticide Name'].value_counts().index
+top_names = sorted(df_top_pest['Pesticide Name'].value_counts().index)
 top_names
 ```
 
