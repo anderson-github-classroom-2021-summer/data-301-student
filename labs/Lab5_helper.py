@@ -35,7 +35,7 @@ def exercise_4(df_scaled):
     median_r2_linear = None
     
     # Your code here
-    # Try n_neighbors from 1 to 5
+    # Try n_neighbors from 1 to 4
     # Use scoring r2
     # Set the outermost cross-validation folds to LeavePOut(p=2) and the inner most folds to 2
     
@@ -53,7 +53,7 @@ def exercise_6(df_train):
     median_r2_linear = None
     
     # Your code here
-    # Try n_neighbors from 1 to 5
+    # Try n_neighbors from 1 to 4
     # Use scoring r2
     # Set the outermost cross-validation folds to LeavePOut(p=2) and the inner most folds to 2
     
